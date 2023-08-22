@@ -30,14 +30,14 @@ Web interface to manipulate squares or rectangles
 
 > **INDICATORS**
 >
-> -   DONE : ✅ - [production]()
-> -   IN PROGRESS : 🔁 - [development]()
+> -   DONE : ✅ - [production](https://github.com/ymtech-labs/squares-manipulation/deployments/Production)
+> -   IN PROGRESS : 🔁 - [development](https://github.com/ymtech-labs/squares-manipulation/deployments/Preview)
 > -   TO DO : 🚧
 
 |                                      RELEASE                                       | DESCRIPTION                                                   | STATUS |
 | :--------------------------------------------------------------------------------: | ------------------------------------------------------------- | :----: |
 | [V0.0.x](https://github.com/ymtech-labs/squares-manipulation/releases/tag/v.0.0.0) | 🛠️ Settings & Technicals Environnement                        |   ✅   |
-|                                     [V0.1.x]()                                     | 🔲 Draw random-colored squares (or rectangles) with the mouse |   🚧   |
+| [V0.1.x](https://github.com/ymtech-labs/squares-manipulation/releases/tag/v.0.1.0) | 🔲 Draw random-colored squares (or rectangles) with the mouse |   🔁   |
 |                                     [V0.2.x]()                                     | ⭕ Double-click on a square to rotate it through 360°         |   🚧   |
 |                                     [V0.3.x]()                                     | 🗑️ At the end of the rotation, delete the square              |   🚧   |
 |                                     [V0.4.x]()                                     | ❌ Multiple square removal                                    |   🚧   |
