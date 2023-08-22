@@ -1,10 +1,10 @@
-# UBSTREAM / Squares manipulation
+# UBSTREAM / Quadrilateral Drawing
 
 <a href="http://www.typescriptlang.org/"><img src="https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg?style=flat-square" height="20"></a>
 <a href="https://twitter.com/younesmjl"><img src="https://img.shields.io/twitter/follow/younesmjl.svg?style=social&label=Follow&maxAge=3600" height="20"></a>
 [![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
-Web interface to manipulate squares or rectangles
+Web interface to drawing quadrilateral (squares or rectangles)
 
 -   [Getting Started](#getting-started)
 -   [Features](#features)
@@ -18,7 +18,7 @@ Web interface to manipulate squares or rectangles
 ## Getting Started <a name="getting-started"></a>
 
 -   Clone the repo<br />
-    `git clone -o seed -b master --single-branch https://github.com/ymtech-labs/squares-manipulation.git`
+    `git clone -o seed -b master --single-branch https://github.com/ymtech-labs/quadrilateral-drawing.git`
 
 ### Application
 
@@ -30,17 +30,17 @@ Web interface to manipulate squares or rectangles
 
 > **INDICATORS**
 >
-> -   DONE : ✅ - [production]()
-> -   IN PROGRESS : 🔁 - [development]()
+> -   DONE : ✅ - [production](https://github.com/ymtech-labs/quadrilateral-drawing/deployments/Production)
+> -   IN PROGRESS : 🔁 - [development](https://github.com/ymtech-labs/quadrilateral-drawing/deployments/Preview)
 > -   TO DO : 🚧
 
-|  RELEASE   | DESCRIPTION                                                   | STATUS |
-| :--------: | ------------------------------------------------------------- | :----: |
-| [V0.0.x]() | 🛠️ Settings & Technicals Environnement                        |   ✅   |
-| [V0.1.x]() | 🔲 Draw random-colored squares (or rectangles) with the mouse |   🚧   |
-| [V0.2.x]() | ⭕ Double-click on a square to rotate it through 360°         |   🚧   |
-| [V0.3.x]() | 🗑️ At the end of the rotation, delete the square              |   🚧   |
-| [V0.4.x]() | ❌ Multiple square removal                                    |   🚧   |
+|                                       RELEASE                                       | DESCRIPTION                                                   | STATUS |
+| :---------------------------------------------------------------------------------: | ------------------------------------------------------------- | :----: |
+| [V0.0.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.0.0) | 🛠️ Settings & Technicals Environnement                        |   ✅   |
+| [V0.1.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.1.0) | 🔲 Draw random-colored squares (or rectangles) with the mouse |   🔁   |
+|                                     [V0.2.x]()                                      | ⭕ Double-click on a quadrilateral to rotate it through 360°  |   🚧   |
+|                                     [V0.3.x]()                                      | 🗑️ At the end of the rotation, delete the square              |   🚧   |
+|                                     [V0.4.x]()                                      | ❌ Multiple quadrilateral removal                             |   🚧   |
 
 ## Directory Structure <a name="directory-sructure"></a>
 
