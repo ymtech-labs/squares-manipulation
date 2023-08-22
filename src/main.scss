@@ -1,0 +1,30 @@
+/**
+
+** SETTINGS
+  * reset .................. custom CSS reset
+
+  
+  **LAYOUT (template of pages)
+  * layout ................. default style for body
+  
+  **OBJECTS (abstractions of html)
+  * squares................. default style for squares
+  
+  
+**TOOLS (are directly imported into the files that use them) 
+  * sass-mq................. mixin that helps to compose media queries in an elegant way
+  * button ................. mixin that helps do button with linear gradient
+  
+*/
+
+//ELEMENTS
+@use "../src/_styles/elements";
+
+//LATOUT
+@use "../src/_styles/layout";
+
+//OBJECTS
+@use "../src/_styles/objects";
+
+//TOOLS
+@use "../src/_styles/tools" as *;

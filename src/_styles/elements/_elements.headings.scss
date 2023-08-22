@@ -1,0 +1,58 @@
+@use "../settings" as *;
+@use "../tools" as * with (
+    $breakpoints: $breakpoints
+);
+
+%line-height-title {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 3em;
+    @extend %line-height-title;
+    font-weight: 600;
+    @include mq($from: mobile) {
+        font-size: 2.25em;
+    }
+    // Apply styling up to devices smaller than tablets (exclude tablets)
+    @include mq($from: tablet) {
+        font-size: 3em;
+    }
+}
+
+h2 {
+    @extend %line-height-title;
+    @include mq($from: mobile) {
+        font-size: 1.125em;
+    }
+    // Apply styling up to devices smaller than tablets (exclude tablets)
+    @include mq($from: tablet) {
+        font-size: 1.375em;
+    }
+}
+
+h3 {
+    @extend %line-height-title;
+    @include mq($from: mobile) {
+        font-size: 1em;
+    }
+    // Apply styling up to devices smaller than tablets (exclude tablets)
+    @include mq($from: tablet) {
+        font-size: 1.125em;
+    }
+}
+
+h4 {
+    font-size: 0.875em;
+    @extend %line-height-title;
+}
+
+h5 {
+    font-size: 0.875em;
+    @extend %line-height-title;
+}
+
+h6 {
+    font-size: 0.875em;
+    @extend %line-height-title;
+}

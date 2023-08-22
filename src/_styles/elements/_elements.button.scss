@@ -1,0 +1,29 @@
+@use "../settings/settings.config" as *;
+@use "../tools/tools.button" as *;
+
+button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background: #1a1a1a;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+button {
+    &:hover,
+    &:focus-visible,
+    &:focus {
+        border-color: #646cff;
+        outline: none;
+        @include hover-button(#646cff, #3e48f5);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    button {
+        background-color: #f9f9f9;
+    }
+}
