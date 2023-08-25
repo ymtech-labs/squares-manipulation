@@ -37,7 +37,7 @@ Web interface to drawing quadrilateral (squares or rectangles)
 |                                       RELEASE                                       | DESCRIPTION                                                   | STATUS |
 | :---------------------------------------------------------------------------------: | ------------------------------------------------------------- | :----: |
 | [V0.0.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.0.0) | 🛠️ Settings & Technicals Environnement                        |   ✅   |
-| [V0.1.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.1.0) | 🔲 Draw random-colored squares (or rectangles) with the mouse |   🔁   |
+| [V0.1.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.1.0) | 🔲 Draw random-colored squares (or rectangles) with the mouse |   ✅   |
 |                                     [V0.2.x]()                                      | ⭕ Double-click on a quadrilateral to rotate it through 360°  |   🚧   |
 |                                     [V0.3.x]()                                      | 🗑️ At the end of the rotation, delete the square              |   🚧   |
 |                                     [V0.4.x]()                                      | ❌ Multiple quadrilateral removal                             |   🚧   |
