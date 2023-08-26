@@ -3,6 +3,7 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "rvest.vs-code-prettier-eslint",
-        "antfu.file-nesting"
+        "antfu.file-nesting",
+        "github.vscode-github-actions"
     ]
 }
