@@ -1,4 +1,3 @@
-import { expect, test } from "vitest";
 import { createQuad, updateQuad, resetQuad } from ".";
 import { IQuad } from "../types";
 

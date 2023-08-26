@@ -1,4 +1,3 @@
-import { expect, test } from "vitest"; //
 import { setupDrawingQuadrilateral } from "./drawing-quad";
 
 test("Setup Drawing Quadrilateral", async () => {
