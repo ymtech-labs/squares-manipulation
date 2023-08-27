@@ -1,11 +1,13 @@
 import type { EventCallback, EventType } from "../types";
 
 /**
- *
- * @param target The target element to add the event listener
- * @param eventType The event type to listen for on the target element
- * @param callback The callback function to execute when the event is triggered
- * @param options The options to pass to the event listener
+ * @function customEventListener
+ * @description Registers a custom event listener on the specified target.
+ * @param {HTMLElement | Document | Window} target The target element to add the event listener
+ * @param {E extends EventType} eventType The event type to listen for on the target element
+ * @param {EventCallback<E>} callback The callback function to execute when the event is triggered
+ * @param {AddEventListenerOptions} [options] options The options to pass to the event listener
+ * @returns {void}
  */
 export function customEventListener<E extends EventType>(
     target: HTMLElement | Document | Window,
