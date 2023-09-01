@@ -4,6 +4,7 @@
         "esbenp.prettier-vscode",
         "rvest.vs-code-prettier-eslint",
         "antfu.file-nesting",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "ZixuanChen.vitest-explorer"
     ]
 }

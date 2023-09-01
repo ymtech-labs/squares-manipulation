@@ -1,0 +1,7 @@
+@use "../tools" as *;
+@use "../settings" as *;
+
+.quad--rotate {
+    transform: rotate(360deg);
+    transition: transform 3s ease-in-out;
+}
