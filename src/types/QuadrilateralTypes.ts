@@ -33,3 +33,5 @@ export interface IQuad {
      */
     drawing: boolean;
 }
+
+export type QuadEvent = MouseEvent | TouchEvent;

@@ -1,4 +1,4 @@
-import { createQuad, updateQuad, resetQuad, rotateQuad } from ".";
+import { createQuad, updateQuad, resetQuad } from ".";
 import { IQuad } from "../types";
 
 //before each test, create a new div element
