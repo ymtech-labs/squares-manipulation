@@ -37,7 +37,7 @@
     }
   },
   "validate-branch-name": {
-    "pattern": "^(master|develop){1}$|^(feature|fix|hotfix|release)\/.+$",
+    "pattern": "^(master|dev){1}$|^(feature|fix|hotfix|release)\/.+$",
     "errorMsg": "🤨 The branch you're trying to pusher doesn't respect our conventions, you can rename it with `git branch -m <current-name> <new-name>`"
   }
 }
