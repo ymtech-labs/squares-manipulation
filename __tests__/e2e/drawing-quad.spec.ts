@@ -67,3 +67,21 @@ test(`Rotate Quadrilateral on Double Click`, async ({ page }) => {
 
     await page.waitForTimeout(3000);
 });
+
+test(`Quad removal at end of rotation`, async ({ page }) => {
+    await drawQuadrilateral(page);
+    // Select the square created in the "Drawing Quadrilateral" test
+    const quadClass: typeof DEFAULT_QUAD_CLASS = "quad";
+    const createdQuad = await page.$(`.${quadClass}`);
+
+    await page.waitForTimeout(1000);
+    // Simulate a double click event on the created quadrilateral to trigger rotation
+    await createdQuad?.dblclick();
+
+    // Wait for a while to ensure the rotation animation completes
+    await page.waitForTimeout(3000);
+
+    // Check that the quadrilateral has been removed from the DOM
+    const isQuadRemoved = (await page.$(`.${quadClass}`)) === null;
+    expect(isQuadRemoved).toBe(true);
+});
