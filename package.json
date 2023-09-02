@@ -10,7 +10,9 @@
     "prepare": "husky install",
     "commit": "git cz",
     "test:unit": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
