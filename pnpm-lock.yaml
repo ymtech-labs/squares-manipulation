@@ -20,6 +20,9 @@ devDependencies:
   commitizen:
     specifier: ^4.3.0
     version: 4.3.0
+  dotenv:
+    specifier: ^16.3.1
+    version: 16.3.1
   happy-dom:
     specifier: ^10.11.2
     version: 10.11.2
@@ -1296,6 +1299,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       is-obj: 2.0.0
+    dev: true
+
+  /dotenv@16.3.1:
+    resolution: {integrity: sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /dotgitignore@2.1.0:

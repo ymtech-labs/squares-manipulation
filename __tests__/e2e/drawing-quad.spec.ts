@@ -7,7 +7,7 @@ import {
 } from "./drawing-quad.spec.helpers";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto("http://localhost:5173");
+    await page.goto("/");
 });
 
 test(`Drawing Quadrilateral`, async ({ page }) => {
