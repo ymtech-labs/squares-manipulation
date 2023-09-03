@@ -50,7 +50,7 @@ Web interface to drawing quadrilateral (squares or rectangles)
 `├──` [`public`](./public) — Static Asset Handling <br>
 `├──` [`src`](./src) — App files <br>
 `├────` [`_styles`](./src/_styles) — Sass files of app <br>
-`├────` [`helpers`](./src/helpers) — Specific functions to a this project... <br>
+`├────` [`components`](./src/components) — Components files <br>
 `├────` [`types`](./src/types) — Type declaration files.<br>
 `├────` [`utils`](./src/utils) — Generic function that accomplishes an abstract task <br>
 `├──────` [`main.ts`](./src/main.ts) — Inject app in index.html<br>

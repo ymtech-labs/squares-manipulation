@@ -1,11 +1,18 @@
-import { customEventListener } from "./utils";
-import { EventType, IQuad, QuadEvent } from "./types";
-import { createQuad, updateQuad, resetQuad, rotateQuad } from "./helpers";
-import { DEFAULT_ROTATE_CLASS } from "./drawing-quad.constants";
+import {
+    DEFAULT_ROTATE_CLASS,
+    createQuad,
+    updateQuad,
+    resetQuad,
+    rotateQuad,
+} from ".";
+import { customEventListener } from "@utils";
+import type { EventType, IQuad, QuadEvent } from "@types";
 
-export function setupDrawingQuadrilateral(element: HTMLDivElement) {
-    // Initialize variables
-    const container = element as HTMLDivElement;
+export function DrawingQuad() {
+    // Check if the container already exists, and if not, create it
+
+    const container = document.createElement("div");
+    container.classList.add("container");
 
     // Initial Quadrilateral state
     const QuadProps: IQuad = {
@@ -31,22 +38,24 @@ export function setupDrawingQuadrilateral(element: HTMLDivElement) {
         },
         {
             eventType: "mousemove",
-            handler: (e) => updateQuad(container, QuadProps, e),
+            handler: (e) => updateQuad(container!, QuadProps, e),
         },
         {
             eventType: "touchmove",
-            handler: (e) => updateQuad(container, QuadProps, e),
+            handler: (e) => updateQuad(container!, QuadProps, e),
         },
         { eventType: "mouseup", handler: () => resetQuad(QuadProps) },
         { eventType: "touchend", handler: () => resetQuad(QuadProps) },
         {
             eventType: "dblclick",
-            handler: (e) => rotateQuad(container, e, DEFAULT_ROTATE_CLASS),
+            handler: (e) => rotateQuad(container!, e, DEFAULT_ROTATE_CLASS),
         },
     ];
 
     // Add event listeners using forEach
     eventHandlers.forEach(({ eventType, handler }) => {
-        customEventListener(container, eventType, handler);
+        customEventListener(container!, eventType, handler);
     });
+
+    return container;
 }

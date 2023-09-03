@@ -1,8 +1,5 @@
 import { test, expect } from "@playwright/test";
-import {
-    DEFAULT_QUAD_CLASS,
-    DEFAULT_ROTATE_CLASS,
-} from "../../src/drawing-quad.constants";
+import { DEFAULT_QUAD_CLASS, DEFAULT_ROTATE_CLASS } from "../../src/components";
 import {
     drawQuadrilateral,
     verifyQuadDimensions,
@@ -17,7 +14,7 @@ test(`Drawing Quadrilateral`, async ({ page }) => {
     await drawQuadrilateral(page);
 
     // Check that the quadrilateral has been created with the correct dimensions
-    const quadStyles = await page.$eval("#app", (container) => {
+    const quadStyles = await page.$eval(".container", (container) => {
         const quad = container.firstChild as HTMLDivElement;
         return {
             left: quad.style.left,
@@ -74,22 +71,4 @@ test(`Quad removal at end of rotation`, async ({ page }) => {
     expect(isQuadRemoved).toBe(true);
 
     await page.close();
-});
-
-test(`Quad removal at end of rotation`, async ({ page }) => {
-    await drawQuadrilateral(page);
-    // Select the square created in the "Drawing Quadrilateral" test
-    const quadClass: typeof DEFAULT_QUAD_CLASS = "quad";
-    const createdQuad = await page.$(`.${quadClass}`);
-
-    await page.waitForTimeout(1000);
-    // Simulate a double click event on the created quadrilateral to trigger rotation
-    await createdQuad?.dblclick();
-
-    // Wait for a while to ensure the rotation animation completes
-    await page.waitForTimeout(3000);
-
-    // Check that the quadrilateral has been removed from the DOM
-    const isQuadRemoved = (await page.$(`.${quadClass}`)) === null;
-    expect(isQuadRemoved).toBe(true);
 });

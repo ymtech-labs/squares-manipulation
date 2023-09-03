@@ -1,5 +1,5 @@
 import { createQuad, updateQuad, resetQuad } from ".";
-import { IQuad } from "../types";
+import { IQuad } from "@types";
 
 //before each test, create a new div element
 let container: HTMLDivElement;
