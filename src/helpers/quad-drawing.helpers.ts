@@ -1,4 +1,5 @@
 import {
+    customEventListener,
     findTargetElement,
     logDebugMessage,
     toggleRotationClass,
@@ -97,6 +98,16 @@ export const rotateQuad = (
 
         if (targetQuad) {
             toggleRotationClass(targetQuad, cssClass);
+            //Once rotation is complete, remove the element from the DOM
+
+            customEventListener(
+                targetQuad,
+                "transitionend",
+                () => {
+                    targetQuad.remove();
+                },
+                { once: true }
+            );
         }
     }
 };
