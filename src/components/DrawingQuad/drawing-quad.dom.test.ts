@@ -1,28 +1,25 @@
-import { setupDrawingQuadrilateral } from "./drawing-quad";
+import { DrawingQuad } from "@components";
 
 test("Setup Drawing Quadrilateral", async () => {
-    // Create a mocked container element
-    const container = document.createElement("div");
-    document.body.appendChild(container);
-
-    setupDrawingQuadrilateral(container);
+    //call the DrawingQuad function
+    const drawQuad = DrawingQuad();
 
     // Simulate a mousedown event to start drawing
     const mouseDownEvent = new MouseEvent("mousedown", {
         clientX: 10,
         clientY: 20,
     });
-    container.dispatchEvent(mouseDownEvent);
+    drawQuad.dispatchEvent(mouseDownEvent);
 
     // Simulate a mousemove event to update the quadrilaterale
     const mouseMoveEvent = new MouseEvent("mousemove", {
         clientX: 40,
         clientY: 60,
     });
-    container.dispatchEvent(mouseMoveEvent);
+    drawQuad.dispatchEvent(mouseMoveEvent);
 
     // Check that the quadrilateral has been created with the correct dimensions
-    const quad = container.firstChild as HTMLDivElement;
+    const quad = drawQuad.firstChild as HTMLDivElement;
     expect(quad.style.left).toBe("10px");
     expect(quad.style.top).toBe("20px");
     expect(quad.style.width).toBe("30px"); // 40 - 10
@@ -30,5 +27,5 @@ test("Setup Drawing Quadrilateral", async () => {
 
     // Simulate a mouseup event to complete the drawing
     const mouseUpEvent = new MouseEvent("mouseup");
-    container.dispatchEvent(mouseUpEvent);
+    drawQuad.dispatchEvent(mouseUpEvent);
 });

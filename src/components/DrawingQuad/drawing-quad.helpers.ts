@@ -1,13 +1,11 @@
 import {
+    customEventListener,
     findTargetElement,
     logDebugMessage,
     toggleRotationClass,
-} from "../utils";
-import {
-    DEFAULT_ROTATE_CLASS,
-    DEFAULT_QUAD_CLASS,
-} from "../drawing-quad.constants";
-import type { IQuad, QuadEvent } from "../types";
+} from "../../utils";
+import { DEFAULT_ROTATE_CLASS, DEFAULT_QUAD_CLASS } from "..";
+import type { IQuad, QuadEvent } from "../../types";
 
 /**
  * Creates an interactive quad (square) element within the specified container.
@@ -97,6 +95,16 @@ export const rotateQuad = (
 
         if (targetQuad) {
             toggleRotationClass(targetQuad, cssClass);
+            //Once rotation is complete, remove the element from the DOM
+
+            customEventListener(
+                targetQuad,
+                "transitionend",
+                () => {
+                    targetQuad.remove();
+                },
+                { once: true }
+            );
         }
     }
 };
