@@ -34,4 +34,9 @@ export interface IQuad {
     drawing: boolean;
 }
 
+/**
+ * Type representing an event that can be either a MouseEvent or a TouchEvent.
+ *
+ * @typedef {MouseEvent | TouchEvent} QuadEvent
+ */
 export type QuadEvent = MouseEvent | TouchEvent;
