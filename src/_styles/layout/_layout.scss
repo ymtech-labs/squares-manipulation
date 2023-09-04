@@ -1,5 +1,4 @@
 @use "../settings/settings.config" as *;
-@use "../tools/tools.media-queries" as *;
 
 body {
     margin: 0;
@@ -9,12 +8,14 @@ body {
     min-height: 100vh;
 }
 
-#app {
+.container {
     margin: 0;
     text-align: center;
     display: block;
     height: 100%;
     width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
 } /* To remove the scrollbars */
 
 @media (prefers-color-scheme: light) {

@@ -36,12 +36,35 @@ export type TouchEventType =
     | "touchcancel";
 
 /**
+ * Type representing various animation events.
+ *
+ * @typedef AnimationEventType
+ * @type {("animationstart"|"animationend"|"animationiteration")}
+ */
+export type AnimationEventType =
+    | "animationstart"
+    | "animationend"
+    | "animationiteration";
+
+/**
+ * Type representing various transition events.
+ *
+ * @typedef TransitionEventType
+ * @type {("transitionstart"|"transitionend"|"transitioncancel"|"transitionrun")}
+ */
+export type TransitionEventType =
+    | "transitionstart"
+    | "transitionend"
+    | "transitioncancel"
+    | "transitionrun";
+
+/**
  * Type representing a union of MouseEventType and KeyboardEventType.
  *
  * @typedef EventType
  * @type {MouseEventType | KeyboardEventType | TouchEventType}
  */
-export type EventType = MouseEventType | KeyboardEventType | TouchEventType;
+export type EventType = MouseEventType | TouchEventType | TransitionEventType;
 
 /**
  * Type representing a callback function for handling events.
@@ -53,8 +76,8 @@ export type EventType = MouseEventType | KeyboardEventType | TouchEventType;
  */
 export type EventCallback<E extends EventType> = E extends MouseEventType
     ? (event: MouseEvent) => void
-    : E extends KeyboardEventType
-    ? (event: KeyboardEvent) => void
     : E extends TouchEventType
-    ? (event: TouchEvent) => void
+    ? (event: TouchEventType) => void
+    : E extends TransitionEventType
+    ? (event: TransitionEvent) => void
     : (event: Event) => void;

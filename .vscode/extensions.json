@@ -5,6 +5,7 @@
         "rvest.vs-code-prettier-eslint",
         "antfu.file-nesting",
         "github.vscode-github-actions",
-        "ZixuanChen.vitest-explorer"
+        "ZixuanChen.vitest-explorer",
+        "ms-playwright.playwright"
     ]
 }

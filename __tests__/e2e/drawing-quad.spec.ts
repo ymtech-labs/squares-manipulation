@@ -1,39 +1,20 @@
 import { test, expect } from "@playwright/test";
+import { DEFAULT_QUAD_CLASS, DEFAULT_ROTATE_CLASS } from "../../src/components";
 import {
-    DEFAULT_QUAD_CLASS,
-    DEFAULT_ROTATE_CLASS,
-} from "../../src/drawing-quad.constants";
-
-async function drawQuadrilateral(page) {
-    // Simulate a mousemove event to set the starting position
-    await page.mouse.move(10, 20);
-
-    // Simulate a mousedown event to start drawing
-    await page.mouse.down();
-
-    // Simulate a mousemove event to update the quadrilateral
-    await page.mouse.move(40, 60);
-
-    // Simulate a mouseup event to complete the drawing
-    await page.mouse.up();
-}
-
-async function verifyQuadDimensions(page, quadStyles) {
-    expect(quadStyles.left).toEqual("10px");
-    expect(quadStyles.top).toEqual("20px");
-    expect(quadStyles.width).toEqual("30px");
-    expect(quadStyles.height).toEqual("40px");
-}
+    drawQuadrilateral,
+    verifyQuadDimensions,
+    waitForTransitionEnd,
+} from "./drawing-quad.spec.helpers";
 
 test.beforeEach(async ({ page }) => {
-    await page.goto("http://localhost:5173");
+    await page.goto("/");
 });
 
 test(`Drawing Quadrilateral`, async ({ page }) => {
     await drawQuadrilateral(page);
 
     // Check that the quadrilateral has been created with the correct dimensions
-    const quadStyles = await page.$eval("#app", (container) => {
+    const quadStyles = await page.$eval(".container", (container) => {
         const quad = container.firstChild as HTMLDivElement;
         return {
             left: quad.style.left,
@@ -43,7 +24,11 @@ test(`Drawing Quadrilateral`, async ({ page }) => {
         };
     });
 
+    // Check that the quadrilateral has been created with the correct dimensions
     await verifyQuadDimensions(page, quadStyles);
+
+    await page.waitForTimeout(3000);
+
     await page.close();
 });
 
@@ -54,6 +39,7 @@ test(`Rotate Quadrilateral on Double Click`, async ({ page }) => {
     const createdQuad = await page.$(`.${quadClass}`);
 
     await page.waitForTimeout(1000);
+
     // Simulate a double click event on the created quadrilateral to trigger rotation
     await createdQuad?.dblclick();
 
@@ -66,4 +52,23 @@ test(`Rotate Quadrilateral on Double Click`, async ({ page }) => {
     expect(hasRotateClass).toBe(true);
 
     await page.waitForTimeout(3000);
+    await page.close();
+});
+
+test(`Quad removal at end of rotation`, async ({ page }) => {
+    await drawQuadrilateral(page);
+    const quadClass: typeof DEFAULT_QUAD_CLASS = "quad";
+    const createdQuad = await page.$(`.${quadClass}`);
+
+    // Simulate a double click event on the created quadrilateral to trigger rotation
+    await createdQuad?.dblclick();
+
+    // Wait for the "transitionend" event to be triggered on the createdQuad
+    await waitForTransitionEnd(page, `.${quadClass}`);
+
+    // Check that the quadrilateral has been removed from the DOM
+    const isQuadRemoved = (await page.$(`.${quadClass}`)) === null;
+    expect(isQuadRemoved).toBe(true);
+
+    await page.close();
 });
