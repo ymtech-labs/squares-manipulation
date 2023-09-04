@@ -68,7 +68,7 @@ jobs:
               run: pnpm exec playwright install --with-deps
             
             - name: Run Playwright tests
-              run: pnpm exec test:e2e
+              run: pnpm run test:e2e
               env:
                   E2E_TEST_BASE_URL: ${{ needs.e2e_tests_setup.outputs.preview_url }}
             - uses: actions/upload-artifact@v3
