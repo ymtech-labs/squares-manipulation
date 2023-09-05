@@ -81,3 +81,14 @@ export type EventCallback<E extends EventType> = E extends MouseEventType
     : E extends TransitionEventType
     ? (event: TransitionEvent) => void
     : (event: Event) => void;
+
+/**
+ * Type representing an object with partial event handlers for specific event types.
+ *
+ * @typedef {Partial<{
+ *   [key in EventType]: (e: MouseEventType) => void;
+ * }>} PartialEventHandlers
+ */
+export type PartialEventHandlers<T> = Partial<{
+    [key in EventType]: (e: T) => void;
+}>;

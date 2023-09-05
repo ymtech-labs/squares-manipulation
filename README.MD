@@ -40,7 +40,7 @@ Web interface to drawing quadrilateral (squares or rectangles)
 | [V0.1.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.1.0) | 🔲 Draw random-colored squares (or rectangles) with the mouse |   ✅   |
 | [V0.2.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v.0.2.0) | ⭕ Double-click on a quadrilateral to rotate it through 360°  |   ✅   |
 |                                     [V0.3.x](https://github.com/ymtech-labs/quadrilateral-drawing/releases/tag/v0.3.0)                                      | 🗑️ At the end of the rotation, remove the quadrilateral       |   ✅   |
-|                                     [V0.4.x]()                                      | ❌ Batch Quadrilateral Removal on Rotation Completion         |   🚧   |
+|                                     [V0.4.x]()                                      | ❌ Batch Quadrilateral Removal on Rotation Completion         |   🔁   |
 
 ## Directory Structure <a name="directory-sructure"></a>
 
@@ -51,8 +51,9 @@ Web interface to drawing quadrilateral (squares or rectangles)
 `├──` [`src`](./src) — App files <br>
 `├────` [`_styles`](./src/_styles) — Sass files of app <br>
 `├────` [`components`](./src/components) — Components files <br>
+`├────` [`helpers`](./src/helpers) — Specific utility functions <br>
 `├────` [`types`](./src/types) — Type declaration files.<br>
-`├────` [`utils`](./src/utils) — Generic function that accomplishes an abstract task <br>
+`├────` [`utils`](./src/utils) — Generic utility function <br>
 `├──────` [`main.ts`](./src/main.ts) — Inject app in index.html<br>
 `├────` [`index.html`](./index.html) — Application entry point<br>
 
