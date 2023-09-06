@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 0.4.0 (2023-09-06)
+
+
+### Features
+
+* **batch-remove:** add removal upon completion of quadrilateral rotation ([e3c92d3](https://github.com/ymtech-labs/squares-manipulation/commit/e3c92d303cec921e4f4103de758e6fe24fe2a20c))
+* **doubletap-rotation:** add customEvent dbltap to rotate quad in mobile ([359eb35](https://github.com/ymtech-labs/squares-manipulation/commit/359eb357e6f487d156b1901248829fde520be9b8))
+
+### Refactoring
+
+* **drawing-quad:** splitting the code into smaller modules ([93f7b4e](https://github.com/ymtech-labs/squares-manipulation/commit/93f7b4e4aa606a46d3f0edca9b103ae9d8bd293d))
+
 ## 0.3.0 (2023-09-04)
 
 
@@ -29,4 +41,3 @@ All notable changes to this project will be documented in this file. See [standa
 * **components:** create a components folder ([eb9184b](https://github.com/ymtech-labs/squares-manipulation/commit/eb9184bd1b9f87e05bc16a1373d3a89c08b13da4))
 * **debug-utils:** add logDebugMessage function to display formatted debug message ([2d1d36d](https://github.com/ymtech-labs/squares-manipulation/commit/2d1d36dd94cc214616cf44f4a3bff1f7bb3f1cfc))
 * **path-aliases :** change config path aliases ([d75fd12](https://github.com/ymtech-labs/squares-manipulation/commit/d75fd122d14dbd20bc43c0cffacc4d4dbdd4b96e))
-
