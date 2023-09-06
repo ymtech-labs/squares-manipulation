@@ -1,5 +1,3 @@
-import { logDebugMessage } from ".";
-
 /**
  * Toggle the rotation class of a DOM element and handle removal of the class after animation.
  *
@@ -11,7 +9,6 @@ export const toggleRotationClass = (
     cssClass: string
 ): void => {
     element.classList.toggle(cssClass);
-    logDebugMessage(`cssClass: ${cssClass}`);
 
     const transitionEndHandler = () => {
         element.classList.remove(cssClass);

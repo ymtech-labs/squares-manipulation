@@ -9,6 +9,9 @@ import type { IQuad, QuadEvent } from "@types";
  */
 
 export const createQuad = (QuadProps: IQuad) => (e: QuadEvent) => {
+    // Prevent default behavior of the event.
+    e.preventDefault();
+
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
     const clientY = "touches" in e ? e.touches[0].clientY : e.clientY;
 

@@ -15,5 +15,6 @@ export const eventQuadManager = (
         mouseup: () => resetQuad(QuadProps),
         touchend: () => resetQuad(QuadProps),
         dblclick: rotateQuad(container, cssClass),
+        dbltap: rotateQuad(container, cssClass),
     };
 };

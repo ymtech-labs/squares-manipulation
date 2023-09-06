@@ -33,7 +33,8 @@ export type TouchEventType =
     | "touchstart"
     | "touchend"
     | "touchmove"
-    | "touchcancel";
+    | "touchcancel"
+    | "dbltap";
 
 /**
  * Type representing various animation events.

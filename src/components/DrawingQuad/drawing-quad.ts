@@ -1,5 +1,5 @@
 import { DEFAULT_ROTATE_CLASS, eventQuadManager } from ".";
-import { customEventListener } from "@utils";
+import { createDoubleTapEvent, customEventListener } from "@utils";
 import type { EventType, IQuad } from "@types";
 
 export function DrawingQuad() {
@@ -13,15 +13,9 @@ export function DrawingQuad() {
         currentQuad: null,
     };
 
-    const eventHandlers: Array<EventType> = [
-        "mousedown",
-        "touchstart",
-        "mousemove",
-        "touchmove",
-        "mouseup",
-        "touchend",
-        "dblclick",
-    ];
+    const eventHandlers = Object.keys(
+        eventQuadManager(container, QuadProps, DEFAULT_ROTATE_CLASS)
+    ) as Array<EventType>;
 
     // Add event listeners using forEach
     eventHandlers.forEach((eventType) => {
@@ -33,6 +27,11 @@ export function DrawingQuad() {
 
         if (handler) {
             customEventListener(container!, eventType, handler);
+
+            if (eventType === "dbltap") {
+                // Use the Custom Event
+                createDoubleTapEvent(container);
+            }
         }
     });
 
