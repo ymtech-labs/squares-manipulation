@@ -71,3 +71,62 @@ export const findTargetElement = (
 
     return targetChild || null;
 };
+
+/**
+ * Function to detect a double tap on an element.
+ * @param element The element to detect the double tap on.
+ * @param callback The callback function to call when a double tap is detected.
+ */
+function detectDoubleTap(
+    element: HTMLElement,
+    callback: (clientX: number, clientY: number) => void
+): void {
+    let lastTouchTime = 0;
+    let isDoubleTap = false;
+    let clientX = 0;
+    let clientY = 0;
+
+    element.addEventListener("touchstart", (event: TouchEvent) => {
+        const currentTime = new Date().getTime();
+        const timeSinceLastTouch = currentTime - lastTouchTime;
+        //c
+        clientX = event.touches[0].clientX;
+        clientY = event.touches[0].clientY;
+
+        if (timeSinceLastTouch <= 300) {
+            // It's a double tap
+            isDoubleTap = true;
+        } else {
+            isDoubleTap = false;
+        }
+
+        lastTouchTime = currentTime;
+    });
+
+    element.addEventListener("touchend", () => {
+        if (isDoubleTap) {
+            callback(clientX, clientY);
+        }
+    });
+}
+
+/**
+ * Create a Custom Event for double tap.
+ * @param element The element to apply the Custom Event to.
+ * @returns A Custom Event for double tap.
+ */
+export function createDoubleTapEvent(element: HTMLElement): CustomEvent {
+    const dbltap = new CustomEvent("dbltap", {
+        bubbles: true,
+        cancelable: true,
+    });
+
+    detectDoubleTap(element, (clientX, clientY) => {
+        // When a double tap is detect4
+        (dbltap as any).clientX = clientX; // Add clientX to the event
+        (dbltap as any).clientY = clientY; // Add clientY to the event
+        element.dispatchEvent(dbltap);
+    });
+
+    return dbltap;
+}
